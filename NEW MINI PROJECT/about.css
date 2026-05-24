@@ -1,4 +1,3 @@
-
 /* Body */
 * {
   margin: 0;
@@ -23,9 +22,9 @@
   color: #4b0082;
 }
 
-.logo a{
-    text-decoration: none;
-    color: inherit;
+.logo a {
+  text-decoration: none;
+  color: inherit;
 }
 .nav-links {
   display: flex;
