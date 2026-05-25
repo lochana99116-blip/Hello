@@ -1,9 +1,3 @@
-/* Body */
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
 
 /* Body */
 body {
@@ -13,6 +7,13 @@ body {
 
 /*NAVBAR */
 
+/* Body */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
