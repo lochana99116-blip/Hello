@@ -217,6 +217,69 @@ textarea{
   }
 }
 
+  /* HAMBURGER (desktop hidden) */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #0077b6;
+}
+
+/* MOBILE SIDEBAR */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    z-index: 10001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -300px; /* hidden */
+    width: 260px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0, 119, 182, 0.15);
+    flex-direction: column;
+    padding-top: 90px;
+    gap: 15px;
+    transition: right 0.3s ease;
+    z-index: 10000;
+    display: flex;
+    border-left: 3px solid #00b4d8;
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .nav-links a {
+    color: #1e3a5f;
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background: #eaf7ff;
+    color: #0077b6;
+  }
+
+  .book-btn {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white !important;
+    text-align: center;
+  }
+}
+  
 </style>
 </head>
 
@@ -224,9 +287,12 @@ textarea{
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <a href="#" class="logo">SL <span>Travels</span></a>
+  <a href="SL-travel-home.html" class="logo">SL <span>Travels</span></a>
 
-  <ul class="nav-links">
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+      
+      <ul class="nav-links" id="nav-links">
+
     <li><a href="SL-travel-home.html">Home</a></li>
     <li><a href="SL-travel-destinatins.html">Destinations</a></li>
     <li><a href="SL-travel-tours.html">Tours</a></li>
