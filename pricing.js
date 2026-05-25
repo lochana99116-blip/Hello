@@ -1,17 +1,3 @@
-// SIDE BAR
-document.addEventListener("DOMContentLoaded", function () {
-
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
-
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      nav.classList.toggle("show");
-    });
-  }
-
-});
-
 
 // NAVBAR SCROLL EFFECT
 
@@ -25,9 +11,12 @@ window.addEventListener("scroll", () => {
   }
 });
 
+
+
 // PAGE LOAD ANIMATION
 
 window.addEventListener("load", () => {
+
   // HERO TEXT
   const hero = document.querySelector(".hero");
   if (hero) hero.classList.add("animate");
@@ -36,24 +25,18 @@ window.addEventListener("load", () => {
   const cards = document.querySelectorAll(".pricing-card");
 
   cards.forEach((card, index) => {
-    setTimeout(
-      () => {
-        card.classList.add("animate");
-      },
-      200 + index * 150,
-    );
+    setTimeout(() => {
+      card.classList.add("animate");
+    }, 200 + index * 150);
   });
 
   // SECTION TITLE
   const titles = document.querySelectorAll(".section-title, .section-subtitle");
 
   titles.forEach((t, i) => {
-    setTimeout(
-      () => {
-        t.classList.add("animate");
-      },
-      300 + i * 200,
-    );
+    setTimeout(() => {
+      t.classList.add("animate");
+    }, 300 + i * 200);
   });
 
   // CUSTOM BOX
@@ -71,35 +54,35 @@ window.addEventListener("load", () => {
       footer.classList.add("animate");
     }, 1000);
   }
+
 });
+
+
 
 // SCROLL REVEAL (SAFER VERSION)
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animate");
-      }
-    });
-  },
-  {
-    threshold: 0.2,
-  },
-);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate");
+    }
+  });
+}, {
+  threshold: 0.2
+});
 
 // observe cards + sections
-document
-  .querySelectorAll(
-    ".pricing-card, .custom-box, .section-title, .section-subtitle",
-  )
-  .forEach((el) => {
-    observer.observe(el);
-  });
+document.querySelectorAll(
+  ".pricing-card, .custom-box, .section-title, .section-subtitle"
+).forEach(el => {
+  observer.observe(el);
+});
+
+
 
 // BUTTON HOVER ENHANCEMENT (OPTIONAL)
 
-document.querySelectorAll(".btn").forEach((btn) => {
+document.querySelectorAll(".btn").forEach(btn => {
   btn.addEventListener("mousemove", (e) => {
     const rect = btn.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -115,10 +98,14 @@ document.querySelectorAll(".btn").forEach((btn) => {
   });
 });
 
+
 // BUTTON RIPPLE (FIXED)
 
-document.querySelectorAll(".btn").forEach((btn) => {
+
+document.querySelectorAll(".btn").forEach(btn => {
+
   btn.addEventListener("click", function (e) {
+
     const ripple = document.createElement("span");
 
     const rect = btn.getBoundingClientRect();
@@ -137,18 +124,26 @@ document.querySelectorAll(".btn").forEach((btn) => {
     setTimeout(() => {
       ripple.remove();
     }, 600);
+
   });
+
 });
+
 
 // BUTTON PAGE LOAD ANIMATION CONTROL
 
+
 window.addEventListener("load", () => {
+
   const buttons = document.querySelectorAll(".btn");
 
   buttons.forEach((btn, index) => {
+
     setTimeout(() => {
       btn.style.opacity = "1";
       btn.style.transform = "translateY(0)";
     }, index * 150);
+
   });
+
 });
