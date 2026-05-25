@@ -209,12 +209,12 @@
         }
       }
 
-     /* HAMBURGER (desktop hidden) */
+/* HAMBURGER (desktop hidden) */
 .menu-toggle {
   display: none;
   font-size: 30px;
   cursor: pointer;
-  color: #05138d;
+  color: #0077b6;
 }
 
 /* MOBILE SIDEBAR */
@@ -231,13 +231,15 @@
     right: -300px; /* hidden */
     width: 260px;
     height: 100vh;
-    background: #f3e8ff;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0, 119, 182, 0.15);
     flex-direction: column;
-    padding-top: 80px;
-    gap: 20px;
+    padding-top: 90px;
+    gap: 15px;
     transition: right 0.3s ease;
     z-index: 10000;
     display: flex;
+    border-left: 3px solid #00b4d8;
   }
 
   .nav-links.show {
@@ -245,7 +247,28 @@
   }
 
   .nav-links li {
-    padding: 15px 20px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .nav-links a {
+    color: #1e3a5f;
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background: #eaf7ff;
+    color: #0077b6;
+  }
+
+  .book-btn {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white !important;
+    text-align: center;
   }
 }
     </style>
