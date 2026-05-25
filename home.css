@@ -12,6 +12,7 @@ body {
 }
 
 /*NAVBAR */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -67,6 +68,7 @@ body {
 
 
 /* HERO */
+
 .hero {
   display: flex;
   flex-direction: row;
@@ -400,4 +402,45 @@ body {
 
 .card:hover h3::after {
   width: 100%;
+}
+
+/* HIDE HAMBURGER ON DESKTOP */
+
+.menu-toggle {
+  display: none;
+}
+
+/* MOBILE SIDEBAR */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    font-size: 30px;
+    color: #4b0082;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 250px;
+    height: 100vh;
+    background: #f3e8ff;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 80px;
+    transition: 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding-left: 20px;
+  }
 }
