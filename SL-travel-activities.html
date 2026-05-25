@@ -208,16 +208,71 @@
           display: none; /* simple mobile clean version */
         }
       }
+
+      /* HAMBURGER */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+/* MOBILE SIDEBAR */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    font-size: 30px;
+    color: #4b0082;
+    z-index: 9999;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100vh;
+    background: #f3e8ff;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 9998;
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+
+  .nav-links li {
+    padding: 15px 20px;
+  }
+}
     </style>
+    <script>
+// SIDE BAR
+document.addEventListener("DOMContentLoaded", function () {
+
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      nav.classList.toggle("show");
+    });
+  }
+
+});
+</script>
   </head>
 
   <body>
     <!-- NAVBAR -->
     <nav class="sl-navbar">
       <div class="nav-container">
-        <a href="#" class="logo-text">SL <span>Travels</span></a>
+        <a href="SL-travel-home.html" class="logo-text">SL <span>Travels</span></a>
 
-        <ul class="nav-links">
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+      
+      <ul class="nav-links" id="nav-links">
           <li><a href="SL-travel-home.html">Home</a></li>
           <li><a href="SL-travel-destinatins.html">Destinations</a></li>
           <li><a href="SL-travel-tours.html">Tours</a></li>
