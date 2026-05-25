@@ -5,6 +5,7 @@ const nav = document.getElementById("nav-links");
 toggle.addEventListener("click", () => {
   nav.classList.toggle("show");
 });
+
 // SCROLL ANIMATION (fade in sections)
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
