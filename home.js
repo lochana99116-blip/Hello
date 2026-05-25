@@ -1,9 +1,15 @@
 // SIDE BAR
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav-links");
+document.addEventListener("DOMContentLoaded", function () {
 
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("show");
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      nav.classList.toggle("show");
+    });
+  }
+
 });
 
 // SCROLL ANIMATION (fade in sections)
